@@ -10,77 +10,106 @@
     text-decoration: none;
     }
     :root{
-     --bg-color: #0e0d0d;
-     --text-color:#fff;
-     --main-color: #ffae00;
      --big-font: 7 rem;
-     --p-font: 1.1 rem;
+     --p-font: 1.3 rem;
 }
 
 body {
-    background: var(--bg-color);
-    color: var(--text-color);
+    background: #f8f1d0;
+    color: #030303;
     overflow-x: hidden;
-    padding-top: 40px;
-    max-width: 1200px;
-    margin: auto;
-}
+ 
+ }
 
 /* Modo oscuro */
-body  {
-    background: #fdfbfb;
-    color: #fff;
-    transition: 0.5s ease-in-out;
-    
-}
-#inicio,
-#sobremi,
-#portfolio,
-#contacto {
-    background-color: #070707;
-    color: #fff;
-    transition: 0.5s ease-in-out;
-
-}
-.txt{
-    margin: 20px 0;
-}
-
-input[type="checkbox"] {
+body .switch{
     position: relative;
-    width: 40px;
-    height: 20px;
-    background-color: #555555;
-    appearance: none;
-    outline: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.5s ease;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);    
+}
+.dark {
+    background-color: #0e0d0d;
+}
 
+
+body.dark .inicio{
+    background-color: #0e0d0d;
+    color: #fff;
 }
-input[type="checkbox"]:checked{
-    background-color: #ffae00;
+body.dark .sobremi{
+    background-color: #0e0d0d;
+    color: #fff;
 }
-input[type="checkbox"]::before{
-    content: '';
+body.dark .sobremi .texto h2{
+    background-color: #0e0d0d;
+    color: #fff;
+}
+body.dark #portfolio {
+    background-color: #0e0d0d;
+    color: #fff;
+}
+body.dark #portfolio h2{
+      color: #fff;
+}
+body.dark .contacto{
+    background-color: #0e0d0d;
+    color: #fff;
+}
+body.dark #contacto h2 {
+    color: #fff;
+}
+body.dark #pie .center{
+    background-color: #0e0d0d;
+    color: #fff;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 34px;
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;    
+}
+.slider{
     position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color:#fff;
-    border-radius: 50%;
-    top: 2px;
-    left: 2px;
-    transition: 0.7s ease;
-
-}   
-input[type="checkbox"]:checked::before {
-    transform: translateX(20px);
-    
-}    
-.dark-mode{
-    background-color: #050505;
-    color:#fffcfc;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffae00;
+    border-radius: 34px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;    
 }
+.slider::before{
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+input:checked+.slider{
+    background-color: #f8f1d0;
+}
+input:focus+.slider::before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+
+
+}
+
 
 /* Encabezado */
 header {
@@ -91,11 +120,12 @@ header {
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 15%;
-    background: transparent;
-    transition: background-color 0.3s; box-shadow: 0.3s;
-    background: #191919;
+    justify-content: space-evenly;
+    padding: 10px 10%;
+    background: #333333;
+    
+    
+   
 }
 
 header .r-logo {
@@ -129,7 +159,7 @@ header .navbar{
 .navbar a{
     font-size: var(--p-font);
     font-weight: 500;
-    color: var(--text-color);
+    color: #030303;
     margin: 0 25px;
     transition: all ease 0.5s;
 }
@@ -140,42 +170,93 @@ header .navbar{
 
 
 /* menú hamburguesa*/
-.menuToggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 28px;
-    margin-left: 10px;
-    z-index: 1000;
+
+#menu-btn{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+ 
 }
-.menuToggle span {
-    height: 2px;
-    width: 25px;
-    background-color: #ffffff; 
-    margin: 4px 0;
-}
-.navbar{
+
+#close-menu{
     display: none;
 }
-.navbar .active {
+
+#menu{
+    display: none;
+}
+nav{
+    display: none;
+    
+}
+
+body.mobile-menu-active{
+    overflow: hidden;
+
+}
+
+body.mobile-menu-active #close-menu{
     display: block;
+    
+    
+}
+
+body.mobile-menu-active #open-menu{
+    display: none;
+    
+
+}
+
+body.mobile-menu-active header{
+    height: 40%;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    transition: height 0.3s;
+    
+    
+    
+}
+
+body.mobile-menu-active nav{
+    display: block;
+    width: 100%;
+    height: 50%;
+    
+    
+
+}
+
+
+body.mobile-menu-active ul#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-around;
+    /*height: 20%;*/
 }
 
 
 /* Contenido de la página */
 .inicio {
+    position: relative;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
     padding: 80px;
-    background-color: #0e0d0d;
+    margin: 30px;
+    background-color: #f8f1d0;
+    color: #030303;
+    font-size: var(--p-font);
 }
 
 .inicio-foto img {
-    max-width: 100%;
-    height: auto;
+    max-width: 80%;
+    height: 400px;
     border-radius: 10px;
     
 }
@@ -200,7 +281,7 @@ header .navbar{
 }
 
 .texto p {
-    font-size: var(--p-font);
+    font-size: #030303;
     font-weight: 400;
     line-height: 30px;
     margin-bottom: 30px;
@@ -224,10 +305,9 @@ header .navbar{
 
 #sobremi,
 #contacto {
-   
-    background: #0e0d0d;
+    position: relative;
     min-height: 100vh;
-    padding: 90px;   
+    padding: 150px;   
     display: flex;
     justify-content:center;
     flex-direction: column;
@@ -246,17 +326,21 @@ header .navbar{
     justify-content: center;
     align-items: center;
     font-size: 4em;
-    color: #fff;
+    color: #030303;
     margin-bottom: 40px;
 }
-#sobremi .texto {
+/*#sobremi .texto{
     max-width: 900px;
     text-align: center;
     font-weight: 400;
-    font-size: 1.1em;
+    font-size: var(--p-font);
     line-height: 30px;
     margin-bottom: 20px;
-    
+     
+}*/
+
+#sobremi .texto p{
+    color: #030303;
 }
 #sobremi .contenido {
   
@@ -270,7 +354,7 @@ header .navbar{
     align-items: center;
 }
 #sobremi .contenido .item:hover{
-    border: 2px solid #f0f0f0;
+    border: 2px solid #191919;
 
 }
     
@@ -279,16 +363,15 @@ header .navbar{
 #portfolio {
             
     padding: 10px;
-    background-color: #0e0d0d;
-    padding: 100px;
-    background-color: #0e0d0d;
+    background-color: #f8f1d0;
+    
    
    
 }
 #portfolio h2 {
       
     font-size: 4em;
-    color: #fff;
+    color: #030303;
     margin-bottom: 25px;
 }
 
@@ -305,6 +388,7 @@ header .navbar{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     margin-bottom: 50px;
+
 }
 
 /* Sección Contacto */
@@ -314,7 +398,7 @@ header .navbar{
     justify-content: center;
     align-items: center;
     font-size: 4em;
-    color: #fff;
+    color: #030303;
     margin-bottom: 40px;
 }
 #contacto .iconos{
@@ -326,7 +410,7 @@ header .navbar{
     
 }
 #contacto .iconos a{
-    background: #191919;
+    background: fddd24;
     height: 90px;
     display: flex;
     justify-content: center;
@@ -340,30 +424,31 @@ header .navbar{
 
 #pie .center{
     
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;    
-    color: #ffffff;
+    color: #030303;
     padding: 20px;
     margin-top: 150px;
-    font-size: 1.2em;
+    font-size: var(--p-font);
 }
 
 
 
 /* Aplicando media query Tablets*/
 
-@media all and (max-width:900px){
+@media (max-width:900px){
 
     header{
 
-        padding: 18px 40px;
+        padding: 10px 0%;
          }
     
     
     .inicio{
-        padding: 130px 40px;
+        padding: 0px;
+        
           flex-direction: column;
           align-items: center;
           padding-bottom: 0;
@@ -400,7 +485,7 @@ header .navbar{
         grid-template-columns: repeat(1,1fr);
         justify-content: center;
         align-items: center;
-        width: 40%;
+       
  
     
     }
@@ -408,7 +493,7 @@ header .navbar{
 
     /* Aplicando media query mobile*/
 
-    @media all and (max-width:700px){
+    @media (max-width:700px) {
 
     .inicio h2{
         font-size: 3em;
@@ -475,7 +560,7 @@ header .navbar{
         align-items: center;
         flex-direction: column;
         z-index: 10000;
-        gap: 20px;
+        gap: 10px;
 
     }
     }

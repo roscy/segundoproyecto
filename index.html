@@ -12,9 +12,10 @@
 
 <body>
     <header>
-               
+
+                     
        <div class="r-logo">
-        <img src="/img/logo.png" alt="Logo de Roscio">
+        <img src="./img/logo.png" alt="Logo de Roscio">
        </div>
                      
         <ul class="navbar">
@@ -23,19 +24,23 @@
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
+        
+        <div>
+            <label class="switch">
+            <input type="checkbox" id="input">
+            <span class="slider"></span>
+        </label>
 
-        <div class="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>            
         </div>
+        
+
+        <button id="menu-btn">
+            <i class="hamburg" id="open-menu"></i>
+            <i class="hamburg-a" id="close-menu"></i>
+        </button>
     
     </header>
 
-       
-        <p class="txt">click</p>
-        <input id="checkitem" type="checkbox" onclick="enableDarkMode()">
-    
         <div id="inicio">
             <div class="inicio">
             <div class="inicio-texto">
@@ -47,7 +52,7 @@
           
             <h1>Roscio Cárdenas</h1>
                    
-            <p>"¡Hola! Soy Roscio Cárdenas, una apasionada en las áreas que involucren creatividad, con experiencia en áreas propias de mi carrera. He tenido la oportunidad de entrar en el mundo del diseño, busco combinar creatividad y funcionalidad para ofrecer soluciones innovadoras y atractivas. Me encanta enfrentar desafíos y colaborar en proyectos que impulsen el cambio positivo. Este es mi portafolio, una muestra de mi trayectoria y habilidades. ¡Bienvenido a mi mundo creativo!"</p>
+            <p>"¡Hola! Soy Roscio Cárdenas, una apasionada en las áreas que involucren creatividad, con experiencia en áreas propias de mi carrera. Busco combinar creatividad y funcionalidad para ofrecer soluciones innovadoras y atractivas. Me encanta enfrentar desafíos y colaborar en proyectos que impulsen el cambio positivo. Este es mi portafolio, una muestra de mi trayectoria y habilidades. ¡Bienvenido a mi mundo creativo!"</p>
            
             </div>        
                 <div class="boton">
@@ -58,7 +63,14 @@
     <section id="sobremi">
         <div class="texto">
             <h2>Sobre Mí</h2>
-            <p>Soy venezolana y emigré a Argentina en 2019 en busca de nuevas oportunidades para mi familia y para mi.  Agradezco profundamente la cálida receptividad que he recibido en este país. Aunque mi corazón lleva la nostalgia de mi tierra, aquí he encontrado la posibilidad de aprender en diversas áreas que antes desconocía. Agradezco a Dios por esta oportunidad de crecimiento y desarrollo, y estoy emocionada por seguir contribuyendo con entusiasmo y dedicación en mi camino profesional."</p>
+            <p>Soy venezolana y emigré a Argentina en 2019 en busca de nuevas oportunidades para mi familia y para mi.  Agradezco profundamente la cálida receptividad que he recibido en este país. Aunque mi corazón lleva la nostalgia de mi tierra, aquí he encontrado la posibilidad de aprender en diversas áreas que antes desconocía. Agradezco a Dios por esta oportunidad de crecimiento y desarrollo, y estoy emocionada por seguir contribuyendo con entusiasmo y dedicación en mi camino profesional. 
+                
+             Comencé estudiando Geologia y Minas a nivel técnico superior universitario, y salí hacia el oriente de mi pais, buscando oportunidades de empleo. Trabajé año y medio con un Instituto llamado "Fe y Alegría", alfabetizando a adultos mayores en zonas de poco acceso.  Posteriormente, de tanto insistir enviando curriculums, recibí el llamado de PDVSA en el año 2005 y allí estuve laborando por 14 años.  Aprendí ese mundo petrolero, lo que me impulsó a continuar mis estudios, esta vez en ingeniería mecánica.
+             Con el tiempo y la situación pais, emigré para Argentina, pero en vista de no conseguir empleo y justo en tiempos de pandemia, comencé a invertir el tiempo en aprender algo que tuviera salida laboral desde casa. 
+
+            Actualmente, trabajo gracias a los conocimientos adquiridos con los programas de Adobe Photoshop e Illustrator, diseñando logotipos para Venezuela, Brasil, Chile y Argentina.  Poniendo en práctica nuevas ideas, ahora exploro el estampado y sublimado de remeras. Mi idea no es hacer cualquier estampado, es realizar diseños y trabajos que causen impacto visual, mejorar lo que ya está en el mercado y crear una marca.  
+            Y aunque ya estoy trabajando en eso, tuve la oportunidad de aprender con Código Pa'lante lenguajes de Programación.  Ahora enfocandome en las mejoras que puede ofrecer este aprendizaje, hacia nuevas oportunidades relacionadas al diseño front end, trabajar en proyectos interactivos que capten la atención del usuario y lo mantengan entusiamado a mantenerse en ella. Así que comencé un curso intensivo de javascripts. Mi lema es, "aprender algo nuevo cada día"
+             "</p>
         </div>
         
         <div class="contenido">
@@ -179,31 +191,8 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-<script>
-   
-    function enableDarkModeOnLoad() {
-        let isDarkModeEnabled = 
-            enableDarkMode();
-        }
-    
-    window.onload = enableDarkModeOnLoad;
-</script>
 
-<script>
-    let list = document.querySelectorAll('.navbar li');
-    function active(){
-        list.forEach((i) =>
-        i.classList.remove('active'));
-        this.classList.add('active');
-    }
-        list.forEach((i) =>
-        i.addEventListener('click', active));
 
-    let menuToggle = document.querySelector('.menuToggle');
-    let header = document.querySelector('header');
-    menuToggle.onclick = function() {
-    }
-</script>
 
 <script src="main.js"></script>    
 
