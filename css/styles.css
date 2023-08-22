@@ -41,10 +41,17 @@ body.dark .sobremi{
     background-color: #0e0d0d;
     color: #fff;
 }
+body.dark .sobremi .texto p{
+    background-color: #0e0d0d;
+    color: #fff;
+}
+
 body.dark .sobremi .texto h2{
     background-color: #0e0d0d;
     color: #fff;
 }
+
+
 body.dark #portfolio {
     background-color: #0e0d0d;
     color: #fff;
@@ -326,22 +333,10 @@ body.mobile-menu-active ul#menu {
     justify-content: center;
     align-items: center;
     font-size: 4em;
-    color: #030303;
     margin-bottom: 40px;
 }
-/*#sobremi .texto{
-    max-width: 900px;
-    text-align: center;
-    font-weight: 400;
-    font-size: var(--p-font);
-    line-height: 30px;
-    margin-bottom: 20px;
-     
-}*/
 
-#sobremi .texto p{
-    color: #030303;
-}
+
 #sobremi .contenido {
   
    display: flex;
